@@ -4,6 +4,9 @@ class Entry < ApplicationRecord
   validates :name, :username, :password, presence: true
   validate :url_format
 
+  encrypts :username, deterministic: true
+  encrypts :password
+
   private
 
   def url_format
