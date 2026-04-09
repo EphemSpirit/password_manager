@@ -1,5 +1,9 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @entries = current_user.entries
+  end
   def new
     @entry = Entry.new
   end
@@ -14,6 +18,10 @@ class EntriesController < ApplicationController
       flash[:alert] = "There was an error creating the entry."
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @entry = current_user.entries.find(params[:id])
   end
 
   private
