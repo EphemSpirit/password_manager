@@ -35,10 +35,10 @@
             box-shadow: $box-shadow-sm;
             margin-left: 0.5rem;
             margin-right: 0.5rem;
-          } 
+          }
         }
 
-        
+
       }
 
       &__main {
@@ -71,6 +71,16 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 1.5rem;
+    }
+
+    .entry-search {
+      width: 24%;
+
+      .entry-search-button {
+        position: absolute;
+        right: 0.5rem;
+        top: 0.65rem;
+      }
     }
   }
 }
