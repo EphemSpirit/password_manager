@@ -6,5 +6,12 @@ Rails.application.routes.draw do
 
   resources :entries
 
+  namespace :api do
+    namespace :v1 do
+      post :auth, to: "auth#create"
+      resources :entries
+    end
+  end
+
   root "entries#index"
 end
